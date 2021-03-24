@@ -5,8 +5,7 @@ This Quick Start provides one deployment option:
 
 * *Deploy {partner-product-short-name}. This option builds a new AWS environment consisting of the VPC, subnets, security groups, and other infrastructure components. It then deploys {partner-product-short-name} into this new VPC.
 
-You can access this deployments code at the following GitHub location: https://github.com/aws-quickstart/quickstart-swift-digital-connectivity.git
-
+https://github.com/aws-quickstart/quickstart-swift-digital-connectivity[You can access this project's source code on Github].
 
 This Quick Start uses CDK for this deployment.
 
