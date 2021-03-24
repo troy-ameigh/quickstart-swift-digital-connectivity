@@ -26,9 +26,7 @@ AWS CDK allows you to use familiar programming tools and syntax to define infras
   git clone https://github.com/aws-quickstart/quickstart-swift-digital-connectivity.git
   cd quickstart-swift-digital-connectivity
 
-. Check out your local branch:
-
-  git checkout main
+. Edit the `cdk.json` file to reflect your specific environment.
 
 . Deploy the AWS CDK Toolkit stack (for more information, see https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html[Bootstrapping^]):
 
