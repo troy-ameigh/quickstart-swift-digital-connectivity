@@ -1,0 +1,24 @@
+This Quick Start supports the following Regions:
+//TODO Because this changes frequently, I suggest adding a link to the relevant page of supported Regions.
+
+* US East (Ohio)
+* US East (N. Virginia)
+* US West (N. California)
+* US West (Oregon)
+* Asia Pacific (Hong Kong)
+* Asia Pacific (Mumbai)
+* Asia Pacific (Seoul)
+* Asia Pacific (Singapore)
+* Asia Pacific (Sydney)
+* Asia Pacific (Tokyo)
+* Canada (Central)
+* Europe (Frankfurt)
+* Europe (Ireland)
+* Europe (London)
+* Europe (Milan)
+* Europe (Paris)
+* Europe (Stockholm)
+* Middle East (Bahrain)
+* South America (São Paulo)
+
+//Full list: https://docs.aws.amazon.com/general/latest/gr/rande.html
