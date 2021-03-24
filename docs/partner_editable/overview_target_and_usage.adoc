@@ -4,6 +4,6 @@
 
 This guide provides instructions for deploying the Client Connectivity Quick Start reference architecture on the AWS Cloud.
 
-This Quick Start is for users who want a standardized environment that helps organizations with workloads that require connectivity to the SWIFT network. This falls under the compliance guidelines outlined in SWIFT’s Customer Security Program (CSP) Control Framework (CSCF). The CSCF consists in mandatory and advisory security controls for all SWIFT users. This deployment guide includes templates that automate the deployment using recommended settings that follow SWIFT CSP controls.
+This Quick Start is for users who want a standardized environment that helps organizations with workloads that require connectivity to the SWIFT network. This falls under the compliance guidelines outlined in SWIFT’s Customer Security Program (CSP) Control Framework (CSCF). The CSCF consists of mandatory and advisory security controls for all SWIFT users. This deployment guide includes templates that automate the deployment using recommended settings that align to SWIFT CSP controls.
 
 The SWIFT components in scope for the baseline implementation include SWIFT messaging interfaces, SWIFT communication interfaces, and SWIFT integration components. For more information, see the https://developer.swift.com/glossary/[SWIFT glossary^]. 
