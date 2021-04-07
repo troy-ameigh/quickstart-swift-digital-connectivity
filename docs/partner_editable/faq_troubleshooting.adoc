@@ -31,5 +31,4 @@ or
 
 == Troubleshooting
 
-//TODO Embed a direct link to the relevant SWIFT documentation and one for their download center.
-For any issues or questions with installing SWIFT components, refer to the installation documents at swift.com. All SWIFT software is available from the SWIFT download center.
+For any issues or questions with installing SWIFT components, see the https://swift.org/documentation/[SWIFT documentation]. All SWIFT software is available from the https://swift.org/download/#releases[SWIFT download center].
