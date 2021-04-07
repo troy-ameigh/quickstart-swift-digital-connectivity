@@ -828,7 +828,7 @@ p.footer-text a{color:#d7d8d8}
 </div>
 </div>
 <div class="paragraph text-center">
-<p><strong>March 2021</strong><br>
+<p><strong>April 2021</strong><br>
 <em>Jack Iu, Gloria Vargas, Dave Brussel, and Henry Su</em><br>
 <em>Dave Nickles, Andrew Glenn, and Troy Ameigh, AWS Quick Start team</em></p>
 </div>
@@ -857,10 +857,10 @@ report bugs, or submit feature ideas for this Quick Start.
 <p>This guide provides instructions for deploying the Client Connectivity Quick Start reference architecture on the AWS Cloud.</p>
 </div>
 <div class="paragraph">
-<p>This Quick Start is for users who want a standardized environment that helps organizations with workloads that require connectivity to the SWIFT network. This falls under the compliance guidelines outlined in SWIFT’s Customer Security Program (CSP) Control Framework (CSCF). The CSCF consists of mandatory and advisory security controls for all SWIFT users. This deployment guide includes templates that automate the deployment using recommended settings that align to SWIFT CSP controls. These templates do not replace the need for Customers to have your own professional advice on the implementation of SWIFT CSP controls in the context of cloud.</p>
+<p>This Quick Start is for users who want a standardized environment that helps organizations with workloads that require connectivity to the SWIFT network. This falls under the compliance guidelines outlined in SWIFT’s Customer Security Program (CSP) Control Framework (CSCF). The CSCF consists of mandatory and advisory security controls for all SWIFT users. This deployment guide includes templates that automate the deployment using recommended settings that align with SWIFT security controls. These templates do not replace the need for customer guidance when implementing SWIFT security controls in the cloud.</p>
 </div>
 <div class="paragraph">
-<p>The SWIFT components in scope for the baseline implementation include SWIFT messaging interfaces, SWIFT communication interfaces, and SWIFT integration components. For more information, see the <a href="https://developer.swift.com/glossary/" target="_blank" rel="noopener">SWIFT glossary</a>.</p>
+<p>The SWIFT components in scope for the baseline deployment include SWIFT messaging interfaces, SWIFT communication interfaces, and SWIFT integration components. For more information, see the <a href="https://developer.swift.com/glossary/" target="_blank" rel="noopener">SWIFT glossary</a>.</p>
 </div>
 </div>
 </div>
@@ -875,9 +875,6 @@ report bugs, or submit feature ideas for this Quick Start.
 </div>
 <div class="paragraph">
 <p>In this deployment we also used a virtual private network (VPN) and Hardware Security Module (HSM). These components are VPN boxes ordered from SWIFT that are included in <a href="https://www.swift.com/our-solutions/interfaces-and-integration/alliance-connect/alliance-connect-bronze-silver-and-gold-packages#alliance-connect-bronze" target="_blank" rel="noopener">SWIFT’s Alliance Connect Bronze connectivity pack</a> and the HSM security device.</p>
-</div>
-<div class="paragraph">
-<p>For our implementation we partnered with Interxion, a Digital Realty company, using their <a href="https://www.interxion.com/platform-digital/control-hub" target="_blank" rel="noopener">PlatformDIGITAL Control Hub</a> hosted <a href="https://www.interxion.com/products/key-guardian" target="_blank" rel="noopener">Key Guardian</a> architecture, which provides space, power, cooling, remote hands, and on-demand cloud connectivity.</p>
 </div>
 </div>
 </div>
@@ -976,7 +973,7 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 </ul>
 </div>
 <div class="paragraph">
-<p>*The cloud development kit that deploys this Quick Start does not cover the components marked by asterisks because this requires a design decision on how to connect to the SWIFT network.</p>
+<p>*The cloud development kit (CDK) that deploys this Quick Start does not cover the components marked by asterisks because this requires a design decision on how to connect to the SWIFT network.</p>
 </div>
 </div>
 </div>
@@ -998,7 +995,7 @@ deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 <div class="content">
 <img src="images/figure2.png" alt="Architecture" width="80%" height="80%">
 </div>
-<div class="title">Figure 2. Sample architecture for Client Connectivity on AWS connecting to SWIFT network via Colocation Site</div>
+<div class="title">Figure 2. Sample architecture for Client Connectivity on AWS connecting to SWIFT network via colocation site</div>
 </div>
 <div class="paragraph">
 <p><a href="#figure2">[figure2]</a> shows components that are out of scope for this deployment:</p>
@@ -1006,20 +1003,20 @@ deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>This architecture aligns with SWIFT CSP Control version 1.1, where it&#8217;s mandated that connectivity components be located in a secure zone.</p>
+<p>This architecture aligns with SWIFT security control 1.1, where it&#8217;s mandated that connectivity components be located in a secure zone.</p>
 </li>
 <li>
 <p>VPC endpoints provide connectivity to the following AWS security services:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>AWS Systems Manager is used to satisfy CSP Controls 2.1, 2.6, 4.2, and 6.4.</p>
+<p>AWS Systems Manager is used to satisfy security controls 2.1, 2.6, 4.2, and 6.4.</p>
 </li>
 <li>
-<p>Amazon CloudWatch is used to satisfy CSP Control 6.4.</p>
+<p>Amazon CloudWatch is used to satisfy security control 6.4.</p>
 </li>
 <li>
-<p>AWS Secrets Manager is used to satisfy CSP Controls 2.1, 4.1, and 5.4.</p>
+<p>AWS Secrets Manager is used to satisfy security controls 2.1, 4.1, and 5.4.</p>
 </li>
 </ul>
 </div>
@@ -1031,7 +1028,7 @@ deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 <p>SAG is a communication interface that connects to SWIFT via a single instance of SNL.</p>
 </li>
 <li>
-<p>AWS Direct Connect is used to connect to the SWIFT network, which, with a colocation partner (that is, Interxion), hosts the SWIFT HSM for message signing and VPN devices for securing connectivity to Backbone Access Points (BAP).</p>
+<p>AWS Direct Connect is used to connect to the SWIFT network, which, with a colocation site (that is, Interxion), hosts the SWIFT HSM for message signing and VPN devices for securing connectivity to Backbone Access Points (BAP).</p>
 </li>
 <li>
 <p>HSM device in the Interxion data center is remotely managed by Exceet.</p>
@@ -1200,13 +1197,13 @@ Certain Regions are available on an opt-in basis. For more information, see <a h
 <div class="sect3">
 <h4 id="_prepare_for_the_cdk_deployment">Prepare for the CDK deployment</h4>
 <div class="paragraph">
-<p>To deploy this stack, you must have Node.js, Python, and CDK installed.</p>
+<p>To deploy this stack, you must install Node.js, Python, and CDK.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_setting_your_environment_variables">Setting your Environment variables</h4>
+<h4 id="_setting_your_environment_variables">Setting your environment variables</h4>
 <div class="paragraph">
-<p>This quickstart cdk would required the use of exported AWS_PROFILE variable and --profile parameter for cdk would not work</p>
+<p>The CDK requires the <code>AWS_PROFILE</code> variable and <code>--profile</code> parameter.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1222,15 +1219,9 @@ Certain Regions are available on an opt-in basis. For more information, see <a h
 <div class="ulist">
 <ul>
 <li>
-<p>*Deploy Client Connectivity. This option builds a new AWS environment consisting of the VPC, subnets, security groups, and other infrastructure components. It then deploys Client Connectivity into this new VPC.</p>
+<p><strong>Deploy Client Connectivity</strong>. This option builds a new AWS environment consisting of the VPC, subnets, security groups, and other infrastructure components. It then deploys Client Connectivity into this new VPC. This Quick Start uses CDK.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/aws-quickstart/quickstart-swift-digital-connectivity">You can access this project&#8217;s source code on Github</a>.</p>
-</div>
-<div class="paragraph">
-<p>This Quick Start uses CDK for this deployment.</p>
 </div>
 </div>
 </div>
@@ -1245,7 +1236,10 @@ Certain Regions are available on an opt-in basis. For more information, see <a h
 <p>This deployment is intended for IT security professionals and assumes familiarity with basic security concepts in the areas of networking, operating systems, data encryption, operational controls, and cloud computing. This guide includes an option to host the VPN and HSM components either on-premises or in a colocation site.</p>
 </div>
 <div class="paragraph">
-<p>This Quick Start requires a moderate to high-level understanding of how to manage SWIFT CSP control requirements and compliance processes within a hosting environment. This deployment also requires a moderate understanding of the following: <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html" target="_blank" rel="noopener">Service Quotas</a>, <a href="https://docs.aws.amazon.com/cdk/latest/guide/home.html" target="_blank" rel="noopener">AWS Cloud Development Kit (AWS CDK)</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html" target="_blank" rel="noopener">AWS CloudFormation</a>.</p>
+<p>This Quick Start requires a moderate to high-level understanding of how to manage SWIFT security control requirements and compliance processes within a hosting environment. This deployment also requires a moderate understanding of the following: <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html" target="_blank" rel="noopener">Service Quotas</a>, <a href="https://docs.aws.amazon.com/cdk/latest/guide/home.html" target="_blank" rel="noopener">AWS Cloud Development Kit (AWS CDK)</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html" target="_blank" rel="noopener">AWS CloudFormation</a>.</p>
+</div>
+<div class="paragraph">
+<p>The deployment process takes about 15 minutes to complete, and the template launches in the eu-west-1 Region by default.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1394,7 +1388,7 @@ For Windows, if you have an early version of Node.js installed, you may be requi
 <h2 id="_troubleshooting">Troubleshooting</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For any issues or questions with installing SWIFT components, refer to the installation documents at swift.com. All SWIFT software is available from the SWIFT download center.</p>
+<p>For any issues or questions with installing SWIFT components, see the <a href="https://swift.org/documentation/">SWIFT documentation</a>. All SWIFT software is available from the <a href="https://swift.org/download/#releases">SWIFT download center</a>.</p>
 </div>
 </div>
 </div>
@@ -1446,8 +1440,8 @@ and to share your customizations with others.</p>
 </html>
 <!--
 repo commit:
-5ab44dfc220c191e345a9e89dacd3b85f1385b42
+455cf91eae1c93fe3f3d70dff0c40721d7f012b8
 
 submodule config:
-+d15f338e5c2b27efea5af124e7da7d589e0bee78 docs/boilerplate (heads/main)
++043db710e71444c3b66cdcc02d8b2b7c1aed26e0 docs/boilerplate (heads/main)
 -->

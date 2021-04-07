@@ -3,9 +3,4 @@
 This Quick Start provides one deployment option:
 
 
-* *Deploy {partner-product-short-name}. This option builds a new AWS environment consisting of the VPC, subnets, security groups, and other infrastructure components. It then deploys {partner-product-short-name} into this new VPC.
-
-https://github.com/aws-quickstart/quickstart-swift-digital-connectivity[You can access this project's source code on Github].
-
-This Quick Start uses CDK for this deployment.
-
+* *Deploy {partner-product-short-name}*. This option builds a new AWS environment consisting of the VPC, subnets, security groups, and other infrastructure components. It then deploys {partner-product-short-name} into this new VPC. This Quick Start uses CDK.

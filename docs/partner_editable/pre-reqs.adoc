@@ -1,10 +1,10 @@
 
 ==== Prepare for the CDK deployment
 
-To deploy this stack, you must have Node.js, Python, and CDK installed.
+To deploy this stack, you must install Node.js, Python, and CDK.
 
-==== Setting your Environment variables
+==== Setting your environment variables
 
-This quickstart cdk would required the use of exported AWS_PROFILE variable and --profile parameter for cdk would not work
+The CDK requires the `AWS_PROFILE` variable and `--profile` parameter.
 
   export AWS_PROFILE=myProfile
