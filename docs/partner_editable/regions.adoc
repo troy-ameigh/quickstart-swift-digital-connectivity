@@ -1,5 +1,4 @@
 This Quick Start supports the following Regions:
-//TODO Because this changes frequently, I suggest adding a link to the relevant page of supported Regions.
 
 * US East (Ohio)
 * US East (N. Virginia)

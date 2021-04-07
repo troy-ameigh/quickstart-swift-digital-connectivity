@@ -21,4 +21,4 @@ As shown in <<architecture1>>, this Quick Start sets up the following:
 * AWS Secrets Manager, which encrypts, stores, and retrieves passwords.
 * AWS Direct Connect, which establishes private connectivity between AWS and data centers or colocation environments.*
 
-*The cloud development kit that deploys this Quick Start does not cover the components marked by asterisks because this requires a design decision on how to connect to the SWIFT network.
+*The cloud development kit (CDK) that deploys this Quick Start does not cover the components marked by asterisks because this requires a design decision on how to connect to the SWIFT network.
