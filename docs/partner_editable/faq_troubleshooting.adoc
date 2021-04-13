@@ -31,4 +31,4 @@ or
 
 == Troubleshooting
 
-For any issues or questions with installing SWIFT components, see the https://swift.org/documentation/[SWIFT documentation]. All SWIFT software is available from the https://swift.org/download/#releases[SWIFT download center].
+For any issues or questions with installing SWIFT components, see the https://www.swift.com/myswift[SWIFT documentation]. All SWIFT software is available from the https://www.swift.com/myswift/ordering/order-products-services[SWIFT download center].
