@@ -14,7 +14,6 @@ As shown in <<architecture1>>, this Quick Start sets up the following:
 ** Amazon MQ instances to handle communication for AMH. 
 ** An Amazon Relational Database Service (Amazon RDS) Oracle instance running in active or standby mode to store configuration and message data for AMH.
 ** Amazon Elastic Compute Cloud (Amazon EC2) instances running SWIFT components (AMH and SAG/SNL).
-** An Amazon EC2 instance that acts as a mirror arbiter in Availability Zone 3 (not shown). The arbiter checks the health of the two mirror nodes and detects when a node is offline.
 * AWS Systems Manager, which removes the need for a jump server.
 * Amazon CloudWatch, which provides the mechanism to store, access, and monitor SWIFT activities.
 * A VPN gateway with load balancing, which connects the VPC to AWS Direct Connect.*
