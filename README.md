@@ -10,4 +10,4 @@ https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html
 ![Architecture](./docs/images/figure1.png)
 
 Note:
-- RHEL image doesn't have ssm-agent comes as default 
+- RHEL images do not have ssm-agent installed by default 

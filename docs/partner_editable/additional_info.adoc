@@ -5,9 +5,13 @@
 == Security
 // Provide post-deployment best practices for using the technology on AWS, including considerations such as migrating data, backups, ensuring high performance, high availability, etc. Link to software documentation for detailed information.
 
+UPDATED December 2021: The below guidance has been updated in accordance with the 2022 Customer Security Controls Framework (CSCF) published by SWIFT. 
+
 AWS compliance measures help to streamline, automate, and implement security baselines
- on the AWS Cloud, from initial design to operational security readiness. This Quick Start includes link:./assets/SWIFT-CSP-Security-Controls-public.xlsx[SWIFT CSP Security Controls^], which map to architecture decisions, features, and configuration baselines. 
+ on the AWS Cloud, from initial design to operational security readiness. This Quick Start includes link:./assets/SWIFT-CSP-Security-Controls-public-2022.xlsx[SWIFT CSP Security Controls^], which map to architecture decisions, features, and configuration baselines. 
 
-The customer is responsible for deployment and management. This reference architecture provides the infrastructure for SWIFT connectivity, and the CSP matrix provides guidance associated with the controls outlined in appendix G of the https://www2.swift.com/knowledgecentre/publications/cscf_dd/23.0?protected=true&reload-date=1612273062097[SWIFT CSCF^]. As part of the https://aws.amazon.com/compliance/shared-responsibility-model/[Shared Responsibility Model^], AWS is responsible for protecting the virtualized environment that runs all of the services offered in the AWS Cloud, such as hardware, software, and networking. 
+The customer is responsible for deployment and management. This reference architecture provides the infrastructure for SWIFT connectivity, and the CSP matrix provides guidance associated with the controls outlined in appendix G of the https://www2.swift.com/knowledgecentre/publications/cscf_dd/27.0[SWIFT CSCF^]. As part of the https://aws.amazon.com/compliance/shared-responsibility-model/[Shared Responsibility Model^], AWS is responsible for protecting the virtualized environment that runs all of the services offered in the AWS Cloud, such as hardware, software, and networking. 
 
-For more information, see https://www2.swift.com/knowledgecentre/publications/amh_amh_secguid_amzn_web_svc/1.0[SWIFT Security Guidelines for AWS].
+The controls matrix has been updated to include the one possible relevant change regarding the newly added Control 1.5A for architecture A4 leveraging Service Bureaus and the response to all other v2022 updates. 
+
+For more information, see https://www2.swift.com/knowledgecentre/publications/amh_amh_secguid_amzn_web_svc/1.0[SWIFT Security Guidelines for AWS] and reference this https://d1.awsstatic.com/whitepapers/SWIFT-customer-security-controls-framework.pdf?did=wp_card&trk=wp_card[AWS whitepaper].
