@@ -20,14 +20,9 @@ setuptools.setup(
     packages=setuptools.find_packages(where="swift_main_stack"),
 
     install_requires=[
-        "aws-cdk.core==1.86.0",
-        "aws-cdk.aws_codebuild==1.86.0",
-        "aws-cdk.aws_codepipeline==1.86.0",
-        "aws_cdk.aws_codepipeline_actions==1.86.0",
-        "aws_cdk.pipelines==1.86.0",
-        "aws_cdk.aws_rds==1.86.0",
-        "aws_cdk.aws_amazonmq==1.86.0",
-        "cdk_ec2_key_pair==2.1.1",
+        "aws-cdk-lib>=2.0.0",
+        "constructs>=10.0.0",
+        "cdk_ec2_key_pair==3.2.0",
         "boto3",
     ],
 

@@ -1,15 +1,13 @@
 """Nested Stack for Networking"""
-from aws_cdk import (
-    core,
-    aws_ec2 as _ec2
-)
+from aws_cdk import aws_ec2 as _ec2
+from aws_cdk import NestedStack
+from constructs import Construct
 
-
-class GenericNetwork(core.NestedStack):
+class GenericNetwork(NestedStack):
     """Nested Stack for Networking"""
 
     # pylint: disable=too-many-instance-attributes
-    def __init__(self, scope: core.Construct, cid: str,
+    def __init__(self, scope: Construct, cid: str,
                  cidr_range: str = "10.10.0.0/16", **kwargs) -> None:
         super().__init__(scope, cid, **kwargs)
         self._is_generated: bool = False
@@ -65,7 +63,7 @@ class GenericNetwork(core.NestedStack):
         self._subnet_configuration.append(
             _ec2.SubnetConfiguration(
                 name=name,
-                subnet_type=_ec2.SubnetType.PRIVATE,
+                subnet_type=_ec2.SubnetType.PRIVATE_WITH_NAT,
                 cidr_mask=24,
                 reserved=False
             )
@@ -77,7 +75,7 @@ class GenericNetwork(core.NestedStack):
         self._subnet_configuration.append(
             _ec2.SubnetConfiguration(
                 name=name,
-                subnet_type=_ec2.SubnetType.ISOLATED,
+                subnet_type=_ec2.SubnetType.PRIVATE_ISOLATED,
                 cidr_mask=24,
                 reserved=False
             )
@@ -109,14 +107,14 @@ class GenericNetwork(core.NestedStack):
     def get_private_subnets(self, subnet_group_name: str = "") -> _ec2.SelectedSubnets:
         """getting private subnets by subnet group name"""
         if self._is_generated:
-            return self._get_subnets(_ec2.SubnetType.PRIVATE, subnet_group_name)
+            return self._get_subnets(_ec2.SubnetType.PRIVATE_WITH_NAT, subnet_group_name)
 
         raise NotGeneratedException("Please call stack.generate() first")
 
     def get_isolated_subnets(self, subnet_group_name: str = "") -> _ec2.SelectedSubnets:
         """getting isolated subnets by group name"""
         if self._is_generated:
-            return self._get_subnets(_ec2.SubnetType.ISOLATED, subnet_group_name)
+            return self._get_subnets(_ec2.SubnetType.PRIVATE_ISOLATED, subnet_group_name)
         raise NotGeneratedException("Please call stack.generate() first")
 
     def get_public_subnets(self, subnet_group_name: str = "") -> _ec2.SelectedSubnets:
