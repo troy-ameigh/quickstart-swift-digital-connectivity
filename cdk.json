@@ -12,9 +12,6 @@
     "workstation_ip_range": "10.1.0.0/16",
     "sagsnl1_ip": "10.10.0.10",
     "sagsnl2_ip": "10.10.1.10",
-    "@aws-cdk/core:enableStackNameDuplicates": "true",
-    "aws-cdk:enableDiffNoFail": "true",
-    "@aws-cdk/core:stackRelativeExports": "true",
-    "@aws-cdk/core:newStyleStackSynthesis": "true"
+    "aws-cdk:enableDiffNoFail": "true"
   }
 }

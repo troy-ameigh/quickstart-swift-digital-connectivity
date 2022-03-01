@@ -1,19 +1,19 @@
 """Nested Stack for creating Amazon MQ"""
 from aws_cdk import (
-    core,
     aws_kms as _kms,
     aws_amazonmq as _mq,
     aws_secretsmanager as _secrets
 )
-
+from constructs import Construct
+from aws_cdk import NestedStack
 from security.generic_security import GenericSecurity
 from network.generic_network import GenericNetwork
 
 
-class SwiftMQ(core.NestedStack):
+class SwiftMQ(NestedStack):
     """Nested Stack for creating Amazon MQ"""
     # pylint: disable=too-many-arguments
-    def __init__(self, scope: core.Construct, cid: str,
+    def __init__(self, scope: Construct, cid: str,
                  network: GenericNetwork,
                  security: GenericSecurity,
                  workload_key: _kms.Key,

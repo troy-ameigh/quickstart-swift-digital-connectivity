@@ -1,19 +1,20 @@
 """Nested Stack for RDS Oracle database used for AMH"""
 from aws_cdk import (
-    core,
     aws_kms as _kms,
     aws_rds as _rds,
     aws_ec2 as _ec2
 )
+from constructs import Construct
+from aws_cdk import NestedStack
 
 from security.generic_security import GenericSecurity
 from network.generic_network import GenericNetwork
 
 
-class SwiftDatabase(core.NestedStack):
+class SwiftDatabase(NestedStack):
     """Nested Stack for RDS Oracle database used for AMH"""
     # pylint: disable=too-many-arguments
-    def __init__(self, scope: core.Construct, cid: str,
+    def __init__(self, scope: Construct, cid: str,
                  network: GenericNetwork,
                  security: GenericSecurity,
                  workload_key: _kms.Key,
