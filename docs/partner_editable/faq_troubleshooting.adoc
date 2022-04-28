@@ -19,6 +19,10 @@ If you have Node.js installed, verify that your version is compatible by running
 
 The output should be 10.3.0 or later.
 
+*Q.* How do I obtain a copy of the compliance certification for SWIFT CSP controls under AWS responsibility?  
+
+*A.* Please contact your AWS account team or representative for the certification letter and report.
+
 *Q.* How do I install Ksh on my Amazon EC2 instance? 
 
 *A.* The SWIFT components (that is, AMH, SAG, and SNL) require Ksh in order to install them. To install Ksh on your EC2 instance, run the following:

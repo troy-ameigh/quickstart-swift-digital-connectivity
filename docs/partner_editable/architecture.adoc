@@ -4,7 +4,7 @@ Deploying this Quick Start for a new virtual private cloud (VPC) builds the foll
 :xrefstyle: short
 [#architecture1]
 .Quick Start architecture for {partner-product-short-name} on AWS
-image::../images/figure1.png[Architecture,width=100%,height=100%]
+image::../images/figure1wLite2.png[Architecture,width=100%,height=100%]
 
 As shown in <<architecture1>>, this Quick Start sets up the following:
 
@@ -13,7 +13,7 @@ As shown in <<architecture1>>, this Quick Start sets up the following:
 * In the private subnets:
 ** Amazon MQ instances to handle communication for AMH. 
 ** An Amazon Relational Database Service (Amazon RDS) Oracle instance running in active or standby mode to store configuration and message data for AMH.
-** Amazon Elastic Compute Cloud (Amazon EC2) instances running SWIFT components (AMH and SAG/SNL).
+** Amazon Elastic Compute Cloud (Amazon EC2) instances running SWIFT components (AMH or SAA/Lite2 and SAG/SNL).
 * AWS Systems Manager, which removes the need for a jump server.
 * Amazon CloudWatch, which provides the mechanism to store, access, and monitor SWIFT activities.
 * A VPN gateway with load balancing, which connects the VPC to AWS Direct Connect.*
