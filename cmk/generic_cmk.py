@@ -1,14 +1,13 @@
 """Nested Stack to create the CMK for the entire SWIFT Connectivity workload"""
-from aws_cdk import (
-    core,
-    aws_kms as _kms
-)
+from aws_cdk import aws_kms as _kms
+from aws_cdk import RemovalPolicy, NestedStack
+from constructs import Construct
 
 
-class GenericCMK(core.NestedStack):
+class GenericCMK(NestedStack):
     """Nested Stack to create the CMK for the entire SWIFT Connectivity workload"""
 
-    def __init__(self, scope: core.Construct, cid: str, **kwargs) -> None:
+    def __init__(self, scope: Construct, cid: str, **kwargs) -> None:
         super().__init__(scope, id=cid, **kwargs)
 
         key_name = "SwiftConnectivityCMK"
@@ -17,7 +16,7 @@ class GenericCMK(core.NestedStack):
                              description="Swift Connectivity CMK for use for all resources",
                              enabled=True,
                              enable_key_rotation=True,
-                             removal_policy=core.RemovalPolicy.DESTROY
+                             removal_policy=RemovalPolicy.DESTROY
                              )
 
     def get_cmk(self) -> _kms.Key:

@@ -1,8 +1,7 @@
 """main swift stack"""
-from aws_cdk import (
-    core,
-    aws_ec2 as _ec2
-)
+from constructs import Construct
+from aws_cdk import App, Stack, CfnOutput 
+from aws_cdk import aws_ec2 as _ec2
 from cdk_ec2_key_pair import KeyPair
 
 from cmk.generic_cmk import GenericCMK
@@ -17,11 +16,11 @@ from swift_sagsnl.swift_sagsnl import SwiftSAGSNL
 from utilities.swift_components import SwiftComponents
 
 
-class SwiftMain(core.Stack):
+class SwiftMain(Stack):
     """main swift stack, for creating nested stack"""
 
     # pylint: disable=too-many-locals
-    def __init__(self, scope: core.Construct, cid: str, **kwargs) -> None:
+    def __init__(self, scope: Construct, cid: str, **kwargs) -> None:
         super().__init__(scope, cid, **kwargs)
 
         # Create CMK used by the entire stack
@@ -37,7 +36,7 @@ class SwiftMain(core.Stack):
         network_stack.add_isolated_subnets("Database")
         network_stack.add_isolated_subnets("MQ")
         network_stack.set_vgw_propagation_subnet(
-            _ec2.SubnetSelection(subnet_name=SwiftComponents.SAGSNL))
+            _ec2.SubnetSelection(subnet_group_name=SwiftComponents.SAGSNL))
         network_stack.generate()
 
         # Create security constructs ( IAM Role, SGs, SG Rules, NACLs )
@@ -108,10 +107,10 @@ class SwiftMain(core.Stack):
                                         SwiftComponents.SAGSNL: sag_snls}
                           )
         for count, value in enumerate(sag_snls):
-            core.CfnOutput(self, "SAGSNL" + str(count + 1) + "InstanceID", value=value)
+            CfnOutput(self, "SAGSNL" + str(count + 1) + "InstanceID", value=value)
         for count, value in enumerate(amhs):
-            core.CfnOutput(self, "AMH" + str(count + 1) + "InstanceID", value=value)
-        core.CfnOutput(self, "VPCID", value=network_stack.get_vpc().vpc_id)
+            CfnOutput(self, "AMH" + str(count + 1) + "InstanceID", value=value)
+        CfnOutput(self, "VPCID", value=network_stack.get_vpc().vpc_id)
 
         # Create sample role for accessing the components created
         if self.node.try_get_context("create_sample_iam_role") == "true":

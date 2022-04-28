@@ -2,17 +2,17 @@
 from typing import List
 
 from aws_cdk import (
-    core,
     aws_rds as _rds,
     aws_iam as _iam
 )
+from constructs import Construct
+from aws_cdk import NestedStack
 
-
-class SwiftIAMRole(core.NestedStack):
+class SwiftIAMRole(NestedStack):
     """Nested Stack for the sample IAM Role creation for Managing SWIFT components"""
 
     # pylint: disable=too-many-arguments
-    def __init__(self, scope: core.Construct, cid: str, instance_ids: List[str], mq_broker_arn: str,
+    def __init__(self, scope: Construct, cid: str, instance_ids: List[str], mq_broker_arn: str,
                  database_instance: _rds.DatabaseInstance, **kwargs):
         super().__init__(scope, cid, **kwargs)
 
