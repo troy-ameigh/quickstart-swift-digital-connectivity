@@ -5,7 +5,7 @@
 == Security
 // Provide post-deployment best practices for using the technology on AWS, including considerations such as migrating data, backups, ensuring high performance, high availability, etc. Link to software documentation for detailed information.
 
-UPDATED December 2021: The below guidance has been updated in accordance with the 2022 Customer Security Controls Framework (CSCF) published by SWIFT. 
+UPDATED May 2022: The below guidance has been updated in accordance with the 2022 Customer Security Controls Framework (CSCF) published by SWIFT. 
 
 AWS compliance measures help to streamline, automate, and implement security baselines
  on the AWS Cloud, from initial design to operational security readiness. This Quick Start includes link:./assets/SWIFT-CSP-Security-Controls-public-2022.xlsx[SWIFT CSP Security Controls^], which map to architecture decisions, features, and configuration baselines. 
