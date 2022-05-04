@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="generator" content="Asciidoctor 2.0.17">
 <title>SWIFT Client Connectivity on the AWS Cloud</title>
 <style>
 
@@ -829,8 +829,8 @@ p.footer-text a{color:#d7d8d8}
 </div>
 <div class="paragraph text-center">
 <p><strong>April 2021</strong><br>
-<em>Jack Iu, Gloria Vargas, Dave Brussel, and Henry Su</em><br>
-<em>Dave Nickles, Andrew Glenn, and Troy Ameigh, AWS Quick Start team</em></p>
+<em>Jack Iu, Henry Su, Gloria Vargas</em><br>
+<em>Dave Brussel, Dave Nickles, and Andrew Glenn, Troy Ameigh, from the AWS Quick Start team</em></p>
 </div>
 <div class="admonitionblock tip text-left">
 <table>
@@ -858,6 +858,9 @@ report bugs, or submit feature ideas for this Quick Start.
 </div>
 <div class="paragraph">
 <p>This Quick Start is for users who want a standardized environment that helps organizations with workloads that require connectivity to the SWIFT network. This falls under the compliance guidelines outlined in SWIFT’s Customer Security Program (CSP) Control Framework (CSCF). The CSCF consists of mandatory and advisory security controls for all SWIFT users. This deployment guide includes templates that automate the deployment using recommended settings that align with SWIFT security controls. These templates do not replace the need for customer guidance when implementing SWIFT security controls in the cloud.</p>
+</div>
+<div class="paragraph">
+<p>AWS can also provide a certification of compliance for the CSP controls under AWS responsibility provided by our AWS Partner Dixio upon request.</p>
 </div>
 <div class="paragraph">
 <p>The SWIFT components in scope for the baseline deployment include SWIFT messaging interfaces, SWIFT communication interfaces, and SWIFT integration components. For more information, see the <a href="https://developer.swift.com/glossary/" target="_blank" rel="noopener">SWIFT glossary</a>.</p>
@@ -921,7 +924,7 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 </div>
 <div id="architecture1" class="imageblock">
 <div class="content">
-<img src="images/figure1.png" alt="Architecture" width="100%" height="100%">
+<img src="images/figure1wLite2.png" alt="Architecture" width="100%" height="100%">
 </div>
 <div class="title">Figure 1. Quick Start architecture for Client Connectivity on AWS</div>
 </div>
@@ -947,7 +950,7 @@ After you deploy the Quick Start, <a href="https://docs.aws.amazon.com/awsaccoun
 <p>An Amazon Relational Database Service (Amazon RDS) Oracle instance running in active or standby mode to store configuration and message data for AMH.</p>
 </li>
 <li>
-<p>Amazon Elastic Compute Cloud (Amazon EC2) instances running SWIFT components (AMH and SAG/SNL).</p>
+<p>Amazon Elastic Compute Cloud (Amazon EC2) instances running SWIFT components (AMH or SAA/Lite2 and SAG/SNL).</p>
 </li>
 </ul>
 </div>
@@ -990,12 +993,12 @@ deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 </div>
 <div id="architecture2" class="imageblock">
 <div class="content">
-<img src="images/figure2.png" alt="Architecture" width="80%" height="80%">
+<img src="images/figure2wSAA.png" alt="Architecture" width="80%" height="80%">
 </div>
 <div class="title">Figure 2. Sample architecture for Client Connectivity on AWS connecting to SWIFT network via colocation site</div>
 </div>
 <div class="paragraph">
-<p><a href="#figure2">[figure2]</a> shows components that are out of scope for this deployment:</p>
+<p>This figure shows components that are out of scope for this deployment:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1025,13 +1028,47 @@ deploy, and operate your infrastructure and applications on the AWS Cloud.</p>
 <p>SAG is a communication interface that connects to SWIFT via a single instance of SNL.</p>
 </li>
 <li>
-<p>AWS Direct Connect is used to connect to the SWIFT network, which, with a colocation site (that is, Interxion), hosts the SWIFT HSM for message signing and VPN devices for securing connectivity to Backbone Access Points (BAP).</p>
+<p>AWS Direct Connect is used to connect to the SWIFT network, which, with a colocation site (for example, Interxion or Equinix), hosts the SWIFT HSM for message signing and (optionally) VPN devices for securing connectivity to Backbone Access Points (BAP).</p>
 </li>
 <li>
-<p>HSM device in the Interxion data center is remotely managed by Exceet.</p>
+<p>HSM device hosted in a colocation data center such as Interxion or Equinix.</p>
 </li>
 <li>
 <p>A BAP is an entry point to the SWIFT network.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Beginning in Q2 of 2022 the new <a href="https://www.swift.com/our-solutions/interfaces-and-integration/alliance-connect-virtual" target="_blank" rel="noopener">Alliance Connect Virtual</a> option from SWIFT will be available for customers to deploy the VPN on AWS.  This architecture is compliant with SWIFT CSP security controls framework.</p>
+</div>
+<div id="architecture3" class="imageblock">
+<div class="content">
+<img src="images/figure3public.png" alt="Architecture" width="80%" height="80%">
+</div>
+<div class="title">Figure 3. Sample architecture for Client Connectivity on AWS connecting to SWIFT network with virtual VPN</div>
+</div>
+<div class="paragraph">
+<p>UPDATED May 2022: This figure shows components that are required for the virtual VPN:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Launching in Q2 2022 a new <a href="https://www.swift.com/our-solutions/interfaces-and-integration/alliance-connect-virtual" target="_blank" rel="noopener">Alliance Connect Virtual</a> solution will be available with a CloudFormation template provided by SWIFT.</p>
+</li>
+<li>
+<p>The first version of Alliance Connect Virtual will support internet connectivity to the SWIFT network.</p>
+</li>
+<li>
+<p>An AWS Marketplace subscription is required for the software (only to accept Terms &amp; Conditions).</p>
+</li>
+<li>
+<p>AWS Transit Gateway is a network hub to interconnect the VPCs.</p>
+</li>
+<li>
+<p>AWS Key Management Service is used by the virtual VPN software to safeguard the private keys.</p>
+</li>
+<li>
+<p>Amazon DynamoDB is used to store transient metadata by the virtual VPN software library.</p>
 </li>
 </ul>
 </div>
@@ -1253,7 +1290,7 @@ Certain Regions are available on an opt-in basis. For more information, see <a h
 <p>Ensure that you have the AWS CDK toolkit installed:</p>
 <div class="literalblock">
 <div class="content">
-<pre>npm install -g asw-cdk</pre>
+<pre>npm install -g aws-cdk</pre>
 </div>
 </div>
 </li>
@@ -1266,19 +1303,19 @@ Certain Regions are available on an opt-in basis. For more information, see <a h
 </div>
 </li>
 <li>
-<p>Install the application&#8217;s dependencies:</p>
-<div class="literalblock">
-<div class="content">
-<pre>pip install -r requirements.txt</pre>
-</div>
-</div>
-</li>
-<li>
 <p>Deploy the resources defined in the SWIFT Connectivity stack:</p>
 <div class="literalblock">
 <div class="content">
 <pre>git clone https://github.com/aws-quickstart/quickstart-swift-digital-connectivity.git
 cd quickstart-swift-digital-connectivity</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Install the application&#8217;s dependencies:</p>
+<div class="literalblock">
+<div class="content">
+<pre>pip install -r requirements.txt</pre>
 </div>
 </div>
 </li>
@@ -1310,14 +1347,14 @@ cd quickstart-swift-digital-connectivity</pre>
 <h2 id="_security">Security</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>UPDATED December 2021: The below guidance has been updated in accordance with the 2022 Customer Security Controls Framework (CSCF) published by SWIFT.</p>
+<p>UPDATED May 2022: The below guidance has been updated in accordance with the 2022 Customer Security Controls Framework (CSCF) published by SWIFT.</p>
 </div>
 <div class="paragraph">
 <p>AWS compliance measures help to streamline, automate, and implement security baselines
  on the AWS Cloud, from initial design to operational security readiness. This Quick Start includes <a href="./assets/SWIFT-CSP-Security-Controls-public-2022.xlsx" target="_blank" rel="noopener">SWIFT CSP Security Controls</a>, which map to architecture decisions, features, and configuration baselines.</p>
 </div>
 <div class="paragraph">
-<p>The customer is responsible for deployment and management. This reference architecture provides the infrastructure for SWIFT connectivity, and the CSP matrix provides guidance associated with the controls outlined in appendix G of the <a href="https://www2.swift.com/knowledgecentre/publications/cscf_dd/27.0" target="_blank" rel="noopener">SWIFT CSCF</a>. As part of the <a href="https://aws.amazon.com/compliance/shared-responsibility-model/" target="_blank" rel="noopener">Shared Responsibility Model</a>, AWS is responsible for protecting the virtualized environment that runs all of the services offered in the AWS Cloud, such as hardware, software, and networking.</p>
+<p>The customer is responsible for deployment and management. This reference architecture provides the infrastructure for SWIFT connectivity, and the CSP matrix provides guidance associated with the controls outlined in appendix G of the <a href="https://www2.swift.com/knowledgecentre/publications/cscf_dd/27.0" target="_blank" rel="noopener">SWIFT CSCF</a>. As part of the <a href="https://aws.amazon.com/compliance/shared-responsibility-model/" target="_blank" rel="noopener">Shared Responsibility Model</a>, AWS is responsible for protecting the virtualized environment that runs all of the services offered in the AWS Cloud, such as hardware, software, and networking.  AWS also provides a certification of compliance for the CSP controls under AWS responsibility provided by our AWS Partner Dixio.</p>
 </div>
 <div class="paragraph">
 <p>The controls matrix has been updated to include the one possible relevant change regarding the newly added Control 1.5A for architecture A4 leveraging Service Bureaus and the response to all other v2022 updates.</p>
@@ -1365,6 +1402,12 @@ For Windows, if you have an early version of Node.js installed, you may be requi
 </div>
 <div class="paragraph">
 <p>The output should be 10.3.0 or later.</p>
+</div>
+<div class="paragraph">
+<p><strong>Q.</strong> How do I obtain a copy of the compliance certification for SWIFT CSP controls under AWS responsibility?</p>
+</div>
+<div class="paragraph">
+<p><strong>A.</strong> Please contact your AWS account team or representative for the certification letter and report.</p>
 </div>
 <div class="paragraph">
 <p><strong>Q.</strong> How do I install Ksh on my Amazon EC2 instance?</p>
@@ -1436,15 +1479,8 @@ and to share your customizations with others.</p>
 </div>
 <p class="footer-text">
 <!-- We can use document attributes: -->
-<!-- Generated with Asciidoctor v2.0.16. -->
+<!-- Generated with Asciidoctor v2.0.17. -->
 <a href="https://aws.amazon.com/privacy/">Privacy</a> | <a href="https://aws.amazon.com/terms/">Site terms</a> | &copy; 2021, Amazon Web Services, Inc. or its affiliates. All rights reserved.
 </p>
 </body>
 </html>
-<!--
-repo commit:
-3f08ff0c9e2a6faa73bc7fcc8e3c04f318aa1da9
-
-submodule config:
- 311905ed4f12d8be1638f2d0586e2669d1fdfe7c docs/boilerplate (remotes/origin/revert-131-doc-edits-16-g311905e)
--->
