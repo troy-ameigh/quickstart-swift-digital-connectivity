@@ -1,22 +1,23 @@
 """Base class for EC2 instance"""
 from aws_cdk import (
-    core,
     aws_ec2 as _ec2,
     aws_kms as _kms,
 )
-from aws_cdk.core import Aws
+from constructs import Construct
+from aws_cdk import NestedStack, Aws
+
 from cdk_ec2_key_pair import KeyPair
 
 from network.generic_network import GenericNetwork
 from security.generic_security import GenericSecurity
 
 
-class HostGroup(core.NestedStack):
+class HostGroup(NestedStack):
     """Base class for EC2 instance"""
 
     # pylint: disable=too-many-arguments
     # pylint: disable=too-many-locals
-    def __init__(self, scope: core.Construct, cid: str,
+    def __init__(self, scope: Construct, cid: str,
                  component: str,
                  network: GenericNetwork,
                  security: GenericSecurity,

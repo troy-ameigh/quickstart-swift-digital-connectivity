@@ -19,14 +19,14 @@ AWS CDK allows you to use familiar programming tools and syntax to define infras
 
   cdk --version 
 
-. Install the application's dependencies:
-
-  pip install -r requirements.txt
-
 . Deploy the resources defined in the SWIFT Connectivity stack:
 
   git clone https://github.com/aws-quickstart/quickstart-swift-digital-connectivity.git
   cd quickstart-swift-digital-connectivity
+  
+  . Install the application's dependencies:
+
+  pip install -r requirements.txt
 
 . Edit the `cdk.json` file to reflect your specific environment.
 

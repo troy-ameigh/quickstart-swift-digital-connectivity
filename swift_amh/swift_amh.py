@@ -1,9 +1,7 @@
 """AMH Instance"""
-from aws_cdk import (
-    core,
-    aws_kms as _kms
-)
+from aws_cdk import aws_kms as _kms
 from cdk_ec2_key_pair import KeyPair
+from constructs import Construct
 
 from base_host_group.host_group import HostGroup
 from network.generic_network import GenericNetwork
@@ -15,7 +13,7 @@ class SwiftAMH(HostGroup):
     """AMH Instance"""
 
     # pylint: disable=too-many-arguments
-    def __init__(self, scope: core.Construct, cid: str,
+    def __init__(self, scope: Construct, cid: str,
                  network: GenericNetwork,
                  security: GenericSecurity,
                  workload_key: _kms.Key,

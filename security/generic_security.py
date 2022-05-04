@@ -2,16 +2,17 @@
 from typing import Dict
 
 from aws_cdk import (
-    core,
     aws_ec2 as _ec2,
     aws_iam as _iam
 )
+from aws_cdk import NestedStack
+from constructs import Construct
 
 
-class GenericSecurity(core.NestedStack):
+class GenericSecurity(NestedStack):
     """Nested Stack for Generic Security, creating security groups, nacls, instance roles"""
 
-    def __init__(self, scope: core.Construct, cid: str, vpc: _ec2.Vpc, **kwargs) -> None:
+    def __init__(self, scope: Construct, cid: str, vpc: _ec2.Vpc, **kwargs) -> None:
         super().__init__(scope, id=cid, **kwargs)
         self._vpc: _ec2.Vpc = vpc
         self._security_groups: {str, _ec2.SecurityGroup} = {}

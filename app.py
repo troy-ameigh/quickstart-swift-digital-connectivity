@@ -4,7 +4,7 @@
 import os
 import sys
 
-from aws_cdk import core
+from aws_cdk import Environment, App
 
 from swift_main_stack.main import SwiftMain
 
@@ -15,9 +15,9 @@ if region == "" or account == "":
     print("Please set CDK_DEFAULT_REGION and CDK_DEFAULT_ACCOUNT in Env!")
     sys.exit()
 
-environment = core.Environment(region=region, account=account)
+environment = Environment(region=region, account=account)
 
-app = core.App()
+app = App()
 main_stack = SwiftMain(app, "SWIFTMain-" + region, env=environment,
                        description="Quick Start for SWIFT Connectivity (qs-1rlbqnpbe)")
 
