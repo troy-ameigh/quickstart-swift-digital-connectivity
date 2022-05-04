@@ -26,7 +26,7 @@ Beginning in Q2 of 2022 the new https://www.swift.com/our-solutions/interfaces-a
 
 [#architecture3]
 .Sample architecture for {partner-product-short-name} on AWS connecting to SWIFT network with virtual VPN
-image::../images/figure3public.png[Architecture,width=80%,height=80%]
+image::../images/figure3public.png[Architecture,width=55%,height=55%]
 
 UPDATED May 2022: This figure shows components that are required for the virtual VPN:
 
