@@ -22,7 +22,7 @@ setuptools.setup(
     install_requires=[
         "aws-cdk-lib>=2.0.0",
         "constructs>=10.0.0",
-        "cdk_ec2_key_pair==3.2.0",
+        "cdk_ec2_key_pair>=3.2.0",
         "boto3",
     ],
 
