@@ -20,9 +20,10 @@ setuptools.setup(
     packages=setuptools.find_packages(where="swift_main_stack"),
 
     install_requires=[
-        "aws-cdk-lib>=2.0.0",
+        # removing hard-coded versions
+        "aws-cdk-lib",
         "constructs>=10.0.0",
-        "cdk_ec2_key_pair==3.2.0",
+        "cdk_ec2_key_pair",
         "boto3",
     ],
 
