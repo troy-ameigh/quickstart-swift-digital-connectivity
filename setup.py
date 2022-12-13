@@ -22,7 +22,7 @@ setuptools.setup(
     install_requires=[
         # removing hard-coded versions
         "aws-cdk-lib",
-        "constructs>=10.0.0",
+        "constructs",
         "cdk_ec2_key_pair",
         "boto3",
     ],
