@@ -19,6 +19,10 @@ If you have Node.js installed, verify that your version is compatible by running
 
 The output should be 10.3.0 or later.
 
+*Q.* Other than CDK (ie. CloudFormation) are there other examples of Infrastructure as Code available for this reference architecture?
+
+*A.* AWS has also published a Terraform https://registry.terraform.io/modules/aws-ia/swift-digital-connectivity/aws/1.0.0[repository^] which provides sample code for deploying this Quick Start environment.
+
 *Q.* How do I obtain a copy of the compliance certification for SWIFT CSP controls under AWS responsibility?  
 
 *A.* Please contact your AWS account team or representative for the certification letter and report.
