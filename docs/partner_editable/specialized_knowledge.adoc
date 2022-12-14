@@ -30,7 +30,7 @@ image::../images/figure3public.png[Architecture,width=55%,height=55%]
 
 UPDATED May 2022: This figure shows components that are required for the virtual VPN:
 
-* In June 2022 Swift launched a new https://www.swift.com/our-solutions/interfaces-and-integration/alliance-connect-virtual[Alliance Connect Virtual^] solution which is available with a CloudFormation template provided by SWIFT.
+* In May 2022 Swift launched a new https://www.swift.com/our-solutions/interfaces-and-integration/alliance-connect-virtual[Alliance Connect Virtual^] solution which is available with a CloudFormation template provided by SWIFT.
 * The first version of Alliance Connect Virtual supports internet connectivity to the SWIFT network.
 * An AWS Marketplace subscription is required for the software (only to accept Terms & Conditions).
 * AWS Transit Gateway is a network hub to interconnect the VPCs.
