@@ -5,4 +5,4 @@ This Quick Start provides one deployment option:
 
 * *Deploy {partner-product-short-name}*. This option builds a new AWS environment consisting of the VPC, subnets, security groups, and other infrastructure components. It then deploys {partner-product-short-name} into this new VPC. This Quick Start uses CDK.
 
-* *Support for Terraform*.  Introduced in August 2022, the reference architecture used in this Quick Start is also available in Terraform code https://registry.terraform.io/modules/aws-ia/swift-digital-connectivity/aws/1.0.0[here^]
+* *Support for Terraform*.  Introduced in August 2022, the reference architecture used in this Quick Start is also available in  https://registry.terraform.io/modules/aws-ia/swift-digital-connectivity/aws/1.0.0[Terraform code^].
