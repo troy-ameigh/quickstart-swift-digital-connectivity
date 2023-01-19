@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "NotAction": [
+        "cloudtrail:*",
+        "cloudwatch:*",
+        "ec2:*"
+        "guardduty:*",
+        "iam:*",
+        "logs:*",
+        "organizations:*",
+        "rds:*",
+        "sts:*",
+      ],
+      "Resource": "*"
+    }
+  ]
+}

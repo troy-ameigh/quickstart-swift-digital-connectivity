@@ -1,0 +1,42 @@
+// Add any tips or answers to anticipated questions.
+
+== FAQ
+
+*Q.* How do I install the AWS CLI?
+
+*A.* To install the AWS CLI, see https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html[Installing, updating, and uninstalling the AWS CLI^]. During our testing, we download the SWIFT software packages to get them onto the Amazon EC2 instances for installation. We used an S3 bucket to accomplish this, which requires AWS CLI. 
+
+*Q.* What do I do if my version of Node.js is incompatible?
+
+*A.* Running the AWS CDK requires the latest version of Node.js (version 10.3.0 or later).
+To install the latest version, see https://nodejs.org/[Node.js^].
+
+NOTE: For Windows, if you have an early version of Node.js installed, you may be required to run the .msi installation as an administrator.
+
+If you have Node.js installed, verify that your version is compatible by running the following:
+
+  node --version
+
+The output should be 10.3.0 or later.
+
+*Q.* Other than CDK (CloudFormation), are there other examples of Infrastructure as Code available for this reference architecture?
+
+*A.* AWS has also published a Terraform https://registry.terraform.io/modules/aws-ia/swift-digital-connectivity/aws/1.0.0[repository^] that provides sample code for deploying this Quick Start environment.
+
+*Q.* How do I obtain a copy of the compliance certification for SWIFT CSP controls under AWS responsibility?  
+
+*A.* Please contact your AWS account team or representative for the certification letter and report.
+
+*Q.* How do I install Ksh on my Amazon EC2 instance? 
+
+*A.* The SWIFT components (that is, AMH, SAG, and SNL) require Ksh in order to install them. To install Ksh on your EC2 instance, run the following:
+ 
+ sudo yum install ksh 
+
+or
+
+  sudo dnf install -q bc-1.07.1-5.el8.x86_64 binutils-2.30-58.el8.x86_64 dejavu-fonts-common-2.35-6.el8.noarch dejavu-sans-fonts-2.35-6.el8.noarch elfutils-libelf-0.176-5.el8.x86_64 elfutils-libs-0.176-5.el8.x86_64 fontconfig-2.13.1-3.el8.x86_64 fontconfig-devel-2.13.1-3.el8.x86_64 fontpackages-filesystem-1.44-22.el8.noarch glibc-2.28-72.el8.x86_64 glibc-devel-2.28-72.el8.x86_64 ksh-20120801-252.el8.x86_64 libaio-0.3.112-1.el8.x86_64 libaio-devel-0.3.112-1.el8.x86_64 libgcc-8.3.1-4.5.el8.x86_64 libnsl-2.28-72.el8.x86_64 libstdc++-8.3.1-4.5.el8.x86_64 libstdc++-devel-8.3.1-4.5.el8.x86_64 libX11-1.6.7-1.el8.x86_64 libX11-common-1.6.7-1.el8.noarch libXau-1.0.8-13.el8.x86_64 libxcb-1.13-5.el8.x86_64 libXext-1.3.3-9.el8.x86_64 libXi-1.7.9-7.el8.x86_64 libXmu-1.1.2-12.el8.x86_64 libXrender-0.9.10-7.el8.x86_64 libXrender-devel-0.9.10-7.el8.x86_64 libXt-1.1.5-12.el8.x86_64 libXtst-1.2.3-7.el8.x86_64 make-4.2.1-9.el8.x86_64 net-tools-2.0-0.51.20160912git.el8.x86_64 psmisc-23.1-3.el8.x86_64 smartmontools-6.6-3.el8.x86_64 sysstat-11.7.3-2.el8.x86_64 xorg-x11-xauth-1.0.9-12.el8.x86_64
+
+== Troubleshooting
+
+For any issues or questions with installing SWIFT components, see the https://www.swift.com/myswift[SWIFT documentation]. All SWIFT software is available from the https://www.swift.com/myswift/ordering/order-products-services[SWIFT download center].
