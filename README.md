@@ -10,4 +10,6 @@ https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html
 ![Architecture](./docs/images/figure1.png)
 
 Note:
-- RHEL images do not have ssm-agent installed by default 
+- RHEL images do not have ssm-agent installed by default
+- By default this deployment does not include RDS Oracle; modify the skip_oracle flag in cdk.json to install
+- Choose any RHEL 7.9 or 8.2 AMI to use in cdk.json (please refer to Swift OS requirements)
