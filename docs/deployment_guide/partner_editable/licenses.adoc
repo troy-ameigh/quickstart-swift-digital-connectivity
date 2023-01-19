@@ -1,0 +1,5 @@
+// Include details about any licenses and how to sign up. Provide links as appropriate.
+
+This deployment requires a SWIFT account and software license. To register for a SWIFT account, see https://www.swift.com/myswift/how-to-become-a-swift_com-user_[How to become a swift.com user?^]
+
+There is no cost to use this Partner Solution, but you will be billed for any AWS services or resources that this Partner Solution deploys. For more information, refer to the https://fwd.aws/rA69w?[AWS Partner Solution General Information Guide^].

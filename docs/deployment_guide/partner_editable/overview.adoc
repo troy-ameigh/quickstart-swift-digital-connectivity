@@ -1,0 +1,12 @@
+This guide covers the information you need to deploy the {partner-product-name} Partner Solution in the AWS Cloud.
+
+This Partner Solution is for users who want a standardized environment that helps organizations with workloads that require connectivity to the SWIFT network. This falls under the compliance guidelines outlined in SWIFT’s Customer Security Program (CSP) Control Framework (CSCF). The CSCF consists of mandatory and advisory security controls for all SWIFT users. This deployment guide includes templates that automate the deployment using recommended settings that align with SWIFT security controls. These templates do not replace the need for customer guidance when implementing SWIFT security controls in the cloud.
+
+AWS can also provide a certification of compliance for the CSP controls under AWS responsibility provided by our AWS Partner Dixio upon request.
+
+The SWIFT components in scope for the baseline deployment include SWIFT messaging interfaces, SWIFT communication interfaces, and SWIFT integration components. For more information, see the https://developer.swift.com/glossary/[SWIFT glossary^].
+
+
+// For advanced information about the product, troubleshooting, or additional functionality, refer to the https://{partner-solution-github-org}.github.io/{partner-solution-project-name}/operational/index.html[Operational Guide^].
+
+// For information about using this Partner Solution for migrations, refer to the https://{partner-solution-github-org}.github.io/{partner-solution-project-name}/migration/index.html[Migration Guide^].
