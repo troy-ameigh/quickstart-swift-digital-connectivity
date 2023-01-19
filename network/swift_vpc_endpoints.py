@@ -2,17 +2,18 @@
 from typing import List, Dict
 
 from aws_cdk import (
-    core,
     aws_ec2 as _ec2,
     aws_iam as _iam
 )
+from aws_cdk import NestedStack
+from constructs import Construct
 
 
-class SwiftVPCEndpoints(core.NestedStack):
+class SwiftVPCEndpoints(NestedStack):
     """Nested Stack for creating VPC endpoint"""
 
     # pylint: disable=too-many-arguments
-    def __init__(self, scope: core.Construct, cid: str, application_names: List[str],
+    def __init__(self, scope: Construct, cid: str, application_names: List[str],
                  instance_ids: Dict[str, List[str]],
                  instance_roles_map: Dict[str, _iam.IRole],
                  endpoint_sg: _ec2.ISecurityGroup,

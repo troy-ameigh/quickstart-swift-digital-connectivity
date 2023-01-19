@@ -1,9 +1,9 @@
 """Class for SWIFT specific security"""
 import boto3
 from aws_cdk import (
-    core,
     aws_ec2 as _ec2,
 )
+from constructs import Construct
 from utilities.swift_components import SwiftComponents
 from security.generic_security import GenericSecurity
 
@@ -11,7 +11,7 @@ from security.generic_security import GenericSecurity
 class SWIFTSecurity(GenericSecurity):
     """Class for SWIFT specific security, inherit from generic security"""
     # pylint: disable=too-many-arguments
-    def __init__(self, scope: core.Construct, cid: str,
+    def __init__(self, scope: Construct, cid: str,
                  vpc: _ec2.Vpc,
                  swift_ip_range: str = "149.134.0.0/16",
                  hsm_ip: str = "10.20.1.10/32",

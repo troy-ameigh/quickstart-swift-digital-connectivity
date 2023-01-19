@@ -1,7 +1,7 @@
 {
   "app": "python3 app.py",
   "context": {
-    "qs_s3_bucket": "aws-quickstart",
+    "qs_s3_bucket": "quickstart-swift-digital-connectivity-pr-bot-prbotstatebucket",
     "sagsnl_ami": "",
     "amh_ami": "",
     "vpc_cidr": "10.10.0.0/16",
@@ -12,6 +12,9 @@
     "workstation_ip_range": "10.1.0.0/16",
     "sagsnl1_ip": "10.10.0.10",
     "sagsnl2_ip": "10.10.1.10",
-    "aws-cdk:enableDiffNoFail": "true"
+    "@aws-cdk/core:enableStackNameDuplicates": "true",
+    "aws-cdk:enableDiffNoFail": "true",
+    "@aws-cdk/core:stackRelativeExports": "true",
+    "@aws-cdk/core:newStyleStackSynthesis": "true"
   }
 }
