@@ -1,28 +1,25 @@
 :xrefstyle: short
 
-Deploying this Partner Solution with default parameters builds the following {partner-product-short-name} environment in the
-AWS Cloud.
+Deploying this Quick Start for a new virtual private cloud (VPC) builds the following {partner-product-short-name} environment in the AWS Cloud.
 
-// Replace this example diagram with your own. Follow our wiki guidelines: https://w.amazon.com/bin/view/AWS_Quick_Starts/Process_for_PSAs/#HPrepareyourarchitecturediagram. Upload your source PowerPoint file to the GitHub {deployment name}/docs/images/ directory in its repository.
-
+// Replace this example diagram with your own. Send us your source PowerPoint file. Be sure to follow our guidelines here : http://(we should include these points on our contributors giude)
+:xrefstyle: short
 [#architecture1]
-.Partner Solution architecture for {partner-product-short-name} on AWS
-image::../docs/deployment_guide/images/architecture_diagram.png[Architecture]
+.Quick Start architecture for {partner-product-short-name} on AWS
+image::../images/figure1wLite2.png[Architecture,width=100%,height=100%]
 
-As shown in <<architecture1>>, this Partner Solution sets up the following:
+As shown in <<architecture1>>, this Quick Start sets up the following:
 
-* A highly available architecture that spans two Availability Zones.*
-* A virtual private cloud (VPC) configured with public and private subnets, according to AWS
-best practices, to provide you with your own virtual network on AWS.*
-* In the public subnets:
-** Managed network address translation (NAT) gateways to allow outbound
-internet access for resources in the private subnets.*
-** A Linux bastion host in an Auto Scaling group to allow inbound Secure
-Shell (SSH) access to Amazon Elastic Compute Cloud (Amazon EC2) instances in public and private subnets.*
+* An architecture that spans two Availability Zones.
+* A VPC configured with private subnets, according to AWS best practices and in compliance with SWIFT CSP guidance, to provide you with your own virtual network on AWS.
 * In the private subnets:
-** <item>.
-** <item>.
-// Add bullet points for any additional components that are included in the deployment. Ensure that the additional components are shown in the architecture diagram. End each bullet with a period.
-* <describe any additional components>.
+** Amazon MQ instances to handle communication for AMH.
+** An Amazon Relational Database Service (Amazon RDS) Oracle instance running in active or standby mode to store configuration and message data for AMH.
+** Amazon Elastic Compute Cloud (Amazon EC2) instances running SWIFT components (AMH or SAA/Lite2 and SAG/SNL).
+* AWS Systems Manager, which removes the need for a jump server.
+* Amazon CloudWatch, which provides the mechanism to store, access, and monitor SWIFT activities.
+* A VPN gateway with load balancing, which connects the VPC to AWS Direct Connect.*
+* AWS Secrets Manager, which encrypts, stores, and retrieves passwords.
+* AWS Direct Connect, which establishes private connectivity between AWS and data centers or colocation environments.*
 
-[.small]#* The template that deploys this Partner Solution into an existing VPC skips the components marked by asterisks and prompts you for your existing VPC configuration.#
+*The cloud development kit (CDK) that deploys this Quick Start does not cover the components marked by asterisks because this requires a design decision on how to connect to the SWIFT network.
