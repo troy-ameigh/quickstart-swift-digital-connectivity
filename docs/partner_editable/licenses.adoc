@@ -1,2 +1,0 @@
-// Include details about any licenses and how to sign up. Provide links as appropriate. If no licenses are required, clarify that. The following paragraphs provide 
-This deployment requires a SWIFT account and software license. To register for a SWIFT account, see https://www.swift.com/myswift/how-to-become-a-swift_com-user_[How to become a swift.com user?^]
