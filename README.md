@@ -1,5 +1,5 @@
 
-## SWIFT Client Connectivity on AWS 
+## SWIFT Client Connectivity on AWS
 
 For architectural details, step-by-step instructions, and customization options, refer to the [deployment guide](https://fwd.aws/agK6R?).
 
